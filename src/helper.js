@@ -38,7 +38,7 @@ export function calculateWinner(squares, stepNumber) {
       return squares[a];
     }
   }
-  if (stepNumber===15){
+  if (stepNumber===16){
     return "draw";
   }
   return null;

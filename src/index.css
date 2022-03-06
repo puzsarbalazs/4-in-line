@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: deepskyblue;
+  background-color: black;
   color: white;
   font-family: "Roboto", sans-serif;
   display: flex;
@@ -86,9 +86,16 @@ li {
   margin: 0.5rem 1rem;
 }
 
+.information{
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background: dodgerblue;
+}
+
 .start {
-  background: cornflowerblue;
-  color: tomato;
+  background: dodgerblue;
+  color: black;
   font-size: 50px;
   padding: 5px;
   font-weight: bold;

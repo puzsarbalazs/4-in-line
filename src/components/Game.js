@@ -7,9 +7,18 @@ const Game = () => {
   const [history, setHistory] = useState([Array(16).fill(null)]);
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
-  const winner = calculateWinner(history[stepNumber]);
-  //const xO = xIsNext ? "X" : "O";
+  const winner = calculateWinner(history[stepNumber],stepNumber);
+
+
+
+
+
   const xO = xIsNext ? "Red" : "Yellow";
+  const color = {
+    color: xO
+  }
+
+
 
   const handleClick = (i) => {
     const historyPoint = history.slice(0, stepNumber + 1);
@@ -45,21 +54,13 @@ const Game = () => {
       setStepNumber(0);
       setXisNext(true);
     }
-  /*
-    const startButton = () => {
-        return <button onClick={alert('asd')}>start gomb</button>;
-    }*/
+
 
   return (
     <>
       <h1>React Tic Tac Toe - With Hooks</h1>
       <Board squares={history[stepNumber]} onClick={handleClick} />
-      <div className="info-wrapper">
-        <div>
-          <h3>History</h3>
-        </div>
-        <h3>{winner ? "Winner: " + winner : "Next Player: " + xO}</h3>
-      </div>
+        <h2 className="information"  style={color}>{!winner ? "Next Player: " + xO : winner==='draw' ? "Its a draw" : "Winner: " + winner}</h2>
       <button onClick={goToStart} className="start">Restart</button>
     </>
   );
